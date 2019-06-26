@@ -2,10 +2,20 @@
   "extends": ["airbnb", "prettier", "prettier/react"],
 
   "rules": {
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 1,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },
   "env": {
     "browser": true,
     "node": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 }
