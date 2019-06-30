@@ -15,7 +15,7 @@ const StyledWrapper = styled.nav`
   padding: 25px 0;
   width: 150px;
   height: 100vh;
-  background-color: ${({ theme }) => theme.note};
+  background-color: ${({ activeColor, theme }) => (activeColor ? theme[activeColor] : theme.note)};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -44,8 +44,8 @@ const StyledLinksList = styled.ul`
   list-style: none;
 `;
 
-const Sidebar = () => (
-  <StyledWrapper>
+const Sidebar = ({ pageType }) => (
+  <StyledWrapper activeColor={pageType}>
     <StyledLogoLink to="/" />
     <StyledLinksList>
       <li>

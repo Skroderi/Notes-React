@@ -4,12 +4,16 @@
   "rules": {
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": 1,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/require-default-props": 0,
+    "react/default-props-match-prop-types": 0,
+    "react/prop-types": 0
   },
   "env": {
     "browser": true,
     "node": true
   },
+
   "settings": {
     "import/resolver": {
       "node": {
