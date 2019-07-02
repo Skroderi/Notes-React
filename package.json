@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@storybook/addon-knobs": "^5.1.9",
-    "eslint": "^5.16.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
@@ -35,6 +34,8 @@
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-links": "^5.1.9",
     "@storybook/react": "^5.1.9",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^5.1.0",
     "eslint-plugin-import": "^2.14.0",
