@@ -1,84 +1,81 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import UserPageTemplate from 'templates/UserPageTemplate';
-import styled from 'styled-components';
 import Heading from 'components/atoms/Heading/Heading';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import Button from 'components/atoms/Button/Button';
+import withContext from 'hoc/withContext';
 
-const StyledDetailsWrapper = styled.div`
-  padding: 50px 0px 0px 100px;
-  max-width: 650px;
+const StyledWrapper = styled.div`
+  padding: 25px 150px 25px 70px;
+  max-width: 50vw;
+  position: relative;
+
+  @media (max-width: 1200px) {
+    max-width: 80vw;
+  }
 `;
+
+const StyledPageHeader = styled.div`
+  margin: 25px 0 50px 0;
+`;
+
 const StyledHeading = styled(Heading)`
-  margin: 40px 0 0 0;
-  font-size: ${({ theme }) => theme.fontSize.xl};
+  margin: 25px 0 0 0;
 
   ::first-letter {
     text-transform: uppercase;
   }
 `;
+
 const StyledParagraph = styled(Paragraph)`
-  margin: 2px;
-  font-weight: ${({ theme }) => theme.light};
+  margin: 0;
+  font-weight: ${({ theme }) => theme.bold};
 `;
 
-const StyledContent = styled(Paragraph)`
-  padding: 10px 0px 10px 0px;
-`;
-
-const StyledArticleLink = styled.a`
+const StyledLink = styled.a`
   display: block;
+  font-weight: ${({ theme }) => theme.bold};
+  font-size: ${({ theme }) => theme.fontSize.xs};
   color: black;
-  font-weight: ${({ theme }) => theme.bold}
-  margin: 5px 0px 30px 0px;
+  text-transform: uppercase;
+  margin: 20px 0 50px;
 `;
 
-const StyledAvatarWrapper = styled.div`
-  position: relative;
-`;
-const StyledAvatar = styled.img`
+const StyledImage = styled.img`
   position: absolute;
-  width: 86px;
-  height: 86px;
-  border: 5px solid ${({ theme }) => theme.twitters};
-  border-radius: 50px;
-  right: 0;
-  bottom: 0;
+  right: -80px;
+  top: 50px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
 `;
 
-const DetailsTemplate = ({ pageType, title, content, created, twitterName, articleUrl }) => (
-  <UserPageTemplate pageType={pageType}>
-    <StyledDetailsWrapper>
-      <StyledHeading>
-        {title}
-        {pageType === 'twitters' ? (
-          <StyledAvatarWrapper>
-            {' '}
-            <StyledAvatar src={`https://avatars.io/twitter/${twitterName}`} />
-          </StyledAvatarWrapper>
-        ) : (
-          ''
-        )}
-      </StyledHeading>
-      <StyledParagraph>CREATED: {created}</StyledParagraph>
-      <StyledContent>{content}</StyledContent>
-      {pageType === 'articles' ? (
-        <StyledArticleLink href={articleUrl}> OPEN THIS ARTICLE</StyledArticleLink>
-      ) : (
-        ''
+const DetailsTemplate = ({ pageContext, title, created, content, articleUrl, twitterName }) => (
+  <UserPageTemplate>
+    <StyledWrapper>
+      <StyledPageHeader>
+        <StyledHeading big as="h1">
+          {title}
+        </StyledHeading>
+        <StyledParagraph>{created}</StyledParagraph>
+      </StyledPageHeader>
+      <Paragraph>{content}</Paragraph>
+      {pageContext === 'articles' && <StyledLink href={articleUrl}>Open article</StyledLink>}
+      {pageContext === 'twitters' && (
+        <StyledImage alt={title} src={`https://avatars.io/twitter/${twitterName}`} />
       )}
-
-      <Link to="/">
-        <Button activeColor={pageType}>CLOSE / SAVE</Button>
-      </Link>
-    </StyledDetailsWrapper>
+      <Button as={Link} to={`/${pageContext}`} activecolor={pageContext}>
+        save / close
+      </Button>
+    </StyledWrapper>
   </UserPageTemplate>
 );
 
 DetailsTemplate.propTypes = {
-  pageType: PropTypes.string.isRequired,
+  pageContext: PropTypes.oneOf(['notes', 'articles', 'twitters']).isRequired,
   title: PropTypes.string,
   created: PropTypes.string,
   content: PropTypes.string,
@@ -94,4 +91,4 @@ DetailsTemplate.defaultProps = {
   twitterName: '',
 };
 
-export default DetailsTemplate;
+export default withContext(DetailsTemplate);

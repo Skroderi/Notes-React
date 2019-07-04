@@ -2,11 +2,11 @@ const initialState = {
   twitters: [
     {
       id: 1,
-      title: 'Hello Roman',
+      title: 'Arsenal!',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi',
       created: '1 day',
-      twitterName: 'hello_roman',
+      twitterName: 'arsenal',
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ const initialState = {
       title: 'React on my mind',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi',
-      articleUrl: 'https://youtube.com/helloroman',
+      articleUrl: 'https://youtube.com/',
       created: '1 day',
     },
     {
@@ -47,7 +47,7 @@ const initialState = {
       title: 'Wish you React',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi',
-      articleUrl: 'https://youtube.com/helloroman',
+      articleUrl: 'https://youtube.com/',
       created: '1 day',
     },
     {
@@ -55,7 +55,7 @@ const initialState = {
       title: 'You gave React a bad name',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi',
-      articleUrl: 'https://youtube.com/helloroman',
+      articleUrl: 'https://youtube.com/',
       created: '5 days',
     },
     {
@@ -63,7 +63,7 @@ const initialState = {
       title: 'Is it React you looking for?',
       content:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi',
-      articleUrl: 'https://youtube.com/helloroman',
+      articleUrl: 'https://youtube.com/',
       created: '10 days',
     },
   ],
