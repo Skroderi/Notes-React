@@ -8,7 +8,7 @@ const articles = [
     title: 'React on my mind',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi',
-    articleUrl: 'https://youtube.com/',
+    articleUrl: 'https://youtube.com/helloroman',
     created: '1 day',
   },
   {
@@ -16,7 +16,7 @@ const articles = [
     title: 'Wish you React',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi',
-    articleUrl: 'https://youtube.com/',
+    articleUrl: 'https://youtube.com/helloroman',
     created: '1 day',
   },
   {
@@ -24,7 +24,7 @@ const articles = [
     title: 'You gave React a bad name',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi',
-    articleUrl: 'https://youtube.com/',
+    articleUrl: 'https://youtube.com/helloroman',
     created: '5 days',
   },
   {
@@ -32,7 +32,7 @@ const articles = [
     title: 'Is it React you looking for?',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi',
-    articleUrl: 'https://youtube.com/',
+    articleUrl: 'https://youtube.com/helloroman',
     created: '10 days',
   },
 ];

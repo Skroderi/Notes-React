@@ -26,7 +26,7 @@ const notes = [
   },
   {
     id: 4,
-    title: 'ASLKHB BLDSHL!',
+    title: 'Reactuj się kto moze!',
     content:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, tempora quibusdam natus modi tempore esse adipisci, dolore odit animi',
     created: '10 days',
