@@ -1,12 +1,10 @@
-/* eslint-disable import/prefer-default-export */
-
 export const routes = {
   home: '/',
   notes: '/notes',
+  note: '/notes/details/:id',
   twitters: '/twitters',
+  twitter: '/twitters/details/:id',
   articles: '/articles',
-  note: '/notes/:id',
-  twitter: '/twitters/:id',
-  article: '/articles/:id',
+  article: '/articles/details/:id',
   login: '/login',
 };
